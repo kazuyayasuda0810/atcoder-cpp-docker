@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     gcc-${GCC_VERSION} \
     g++-${GCC_VERSION} \
+    gdb \
     git \
     time \
     tree \
