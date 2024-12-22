@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.13-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Tokyo
@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 
 ARG ACL_TAG=v1.5.1
 ARG ACL_PATH="/lib/ac-library"
-ENV CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:${ACL_PATH}
+ENV CPLUS_INCLUDE_PATH=${ACL_PATH}
 RUN git clone https://github.com/atcoder/ac-library.git -b ${ACL_TAG} ${ACL_PATH}
 
 # atcoder-toolsのエラーを防ぐためにmarkupsafeのバージョンを指定してインストール
